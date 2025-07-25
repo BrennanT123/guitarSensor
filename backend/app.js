@@ -7,9 +7,9 @@ const app = express();
 
 dotenv.config();
 
-console.log(process.env.FRONTEND_URL);
+console.log(process.env.FRONTEND_URL); //You dont need this for ESP32, but if you want to make a frontend you will need to set this up
 const corsOptions = {
-  origin: process.env.FRONTEND_URL, //youll need to update this when you host your website
+  origin: process.env.FRONTEND_URL, 
   optionsSuccessStatus: 200,
   credentials: true,
 };
@@ -20,6 +20,7 @@ app.use(cors(corsOptions));
 
 // JSON parsing middleware
 app.use(express.json());
+
 
 
 // Parse URL-encoded form data
